@@ -29,3 +29,15 @@ function on() {
   function Calendar() {
     location.href = "http://127.0.0.1:5500/Calendar.html";
   }
+
+  function TestStage() {
+    location.href = "http://127.0.0.1:5500/create.html";
+  }
+
+  function LogOut() {
+    location.href = "http://127.0.0.1:5500/index.html";
+  }
+
+  function ReqeustStage() {
+    alert('open mailbox');
+  }

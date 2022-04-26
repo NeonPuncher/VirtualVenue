@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
       headerToolbar: {
         left: 'prev,next',
         center: 'title',
-        right: 'requestStageButton testEventButton addEventButton'
+        right: 'addEventButton'
       },
       eventClick: function(info) {
         document.getElementById("eventName").innerHTML = info.event.title;
         document.getElementById("eventStartTime").innerHTML = info.event.start;
         document.getElementById("eventEndTime").innerHTML = info.event.end;
         document.getElementById("maxUsers").innerHTML = info.event._def.extendedProps.MUsers
-        document.getElementById("eventType").innerHTML = info.event._def.extendedProps.EType
+        document.getElementById("hostApp").innerHTML = info.event._def.extendedProps.HApp
         document.getElementById("extraInfo").innerHTML = info.event._def.extendedProps.EInfo;
         console.log(info.event._def.extendedProps)
         document.getElementById("infoImg").src = info.event._def.extendedProps.ImgSrc;
@@ -32,20 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
         addEventButton: {
           text: '+ New Event',
           click: function() {
-            on();
+            Eon();
           }
-        },
-        testEventButton: {
-            text: 'Test Event',
-            click: function() {
-                location.href = "http://127.0.0.1:5500/create.html";
-            }
-        },
-        requestStageButton: {
-            text: 'Request Stage',
-            click: function() {
-                alert('open mailbox')
-            }
         },
         refetchEvents: {
           //If there is no refresh, This shit aint dynamic
@@ -91,10 +79,10 @@ function getDate() {
 }
 
 //Activate the new Event window
-function on() {
+function Eon() {
   document.getElementById("NewEventPromt").style.display = "block";
 }
   
-function off() {
+function Eoff() {
   document.getElementById("NewEventPromt").style.display = "none";
 }

@@ -19,7 +19,7 @@ function createNewEvent() {
     let link = document.getElementById('streamUrl').value;
     let startDate = new Date(currentEvent[0].date + 'T'+currentEvent[0].startTime+':00');
     let endDate = new Date(currentEvent[0].date + 'T'+currentEvent[0].endTime+':00');
-    let eventType = document.getElementById('EventTypes').value;
+    let hostApp = document.getElementById('hostApp').value;
     let hostUrl = document.getElementById('hostUrl').value;
     let maxUsers = document.getElementById('maxUsers').value;
     let sceneName = document.getElementById('sceneName').textContent;
@@ -30,7 +30,7 @@ function createNewEvent() {
         newEvent = {
           title: title,
           link: link,
-          EType: eventType,
+          HApp: hostApp,
           start: startDate,
           end: endDate,
           allDay: false,

@@ -48,7 +48,6 @@ input {
 }
 
 input[type="number"] {
-    margin: 2%;
     width: 30%;
     text-align: center;
 }
@@ -103,7 +102,7 @@ input[type="file"] {
 .listcontainer {
     background-color: lightgray;
     overflow-x:hidden;
-    width: 40%;
+    flex: 1;
     height: 100vh;
 }
 
@@ -239,6 +238,7 @@ input[type="file"] {
     display:inline-grid;
     grid-template-columns: auto auto auto;
     background-color: #70ADFF;
+    border-radius: 12px;
     width: 100%;
     color: white;
     border-radius: 4px;
@@ -247,5 +247,45 @@ input[type="file"] {
 }
 
 .stageimage {
+    width: 100px;
+    border-radius: 12px;
+}
+
+.Sidbar {
+    flex: .18;
+    background-color: #70ADFF;
+    height: 100vh;
+}
+
+.SideBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding-top: 5%;
+    margin-bottom: 10%;
+    background-color: transparent;
+    text-align: center;
+}
+
+.SideImg {
+    padding: 5%;
     width: 75%;
+}
+
+.SideBtn:hover {
+    transition: .5s;
+    background-color:#3b7ed9;
+
+}
+
+.SideBtnA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#3b7ed9;
+    color: white;
+    padding-top: 5%;
+    margin-bottom: 10%;
+    text-align: center;
 }

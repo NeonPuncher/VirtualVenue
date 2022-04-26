@@ -4,10 +4,10 @@
     <title>Virtual Stage Manager</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
 <body>
+    <!--Customisation page (on top of all other elements)-->
     <div class="customizePage" id="customizePage">
         <h2>Customize Options</h2>
         <hr>
@@ -48,7 +48,18 @@
             <button class="closeBtn" onclick="CustomOff()">Discard</button>
         </div>
     </div>
+    <!--Flexbox containing Sidebar/List of Models/Model viewer-->
     <div class="w-full flex">
+        <div class="Sidbar">
+            <img src="images/EffenaarLogo.png" style="width: 200px; margin-bottom: 30%;">
+            <div>
+              <div class="SideBtn" id="Calendar" onclick="Calendar()"><img src="images/calendarWhite.png" class="SideImg"><label>Agenda</label></div>
+              <div class="SideBtnA" id="TestStage"><img src="images/StageIcon.png" class="SideImg"><label>Stages</label></div>
+              <div class="SideBtn" id="RequestStage" onclick="ReqeustStage()"><img src="images/RequestIcon.png" class="SideImg"><label>Request</label></div>
+              <div class="SideBtn" id="LogOut" onclick="LogOut()" style="position:relative; margin-top:35vh;"><img src="images/LogoutIcon.png" class="SideImg"><label>LogOut</label></div>
+            </div>
+          </div>
+        <!--Filter Overlay-->
         <div class="overlay" id="overlay">
             <div class="overlay-content" id="overlay-content">
                 <div class="FilterHeader">
@@ -99,6 +110,7 @@
                 </div>
             </div> 
         </div>
+        <!--Summary of the Whole Event that is planned-->
         <div class="overlay" id="overview">
             <div class="overlay-content" id="overview-content">
                 <div class="FilterHeader">
@@ -109,27 +121,28 @@
                     <h2>Event Information</h2>
                     <div class="eventContent">
                         <h3>Event name:</h3><input type="text" id="eventTitle">
-                        <h3>Event type:</h3>
-                        <select name="EventTypes" id="EventTypes">
-                            <option value="groupband">Group band</option>
-                            <option value="soloartist">Solo artist</option>
-                            <option value="duoartist">Duo artist</option>
-                            <option value="quartet">Quartet</option>
-                            <option value="soloband">Solo arist with band</option>
-                        </select>
                         <h3>Event date:</h3><div style="display: flex;"><input type="date" id="datum"><input type="time" id="starttime"><h4>To</h4><input type="time" id="endtime"></div>
                         <h3>Stream URL:</h3><input type="text" id="streamUrl">
-                        <h3>Host URL:</h3><input type="text" id="hostUrl">
-                        <h3>Max. Users:</h3><input type="text" id="maxUsers">
+                        <h3>Host Application:</h3>
+                        <select name="hostApp" id="hostApp">
+                            <option value="covince">CoVince</option>
+                            <option value="unity">Unity3D</option>
+                            <option value="metaverse">Metaverse</option>
+                            <option value="vrchat">VRChat</option>
+                            <option value="custom">Custom Application</option>
+                        </select>
+                        <h3>Host URL:</h3><input type="text" id="hostUrl" placeholder="https://www.queen.com/VirtualVenue">
+                        <h3>Max. Users:</h3><input type="number" id="maxUsers">
                         <h3>Scene Name:</h3><p id="sceneName">Test</p><p id="thumbnailsrc">Test</p>
                     </div>
                     <hr>
-                    <h2>Event description</h2>
-                    <textarea style="height: 30%;" id="extraInfo"></textarea>
+                    <h2>Event Instructions</h2>
+                    <textarea style="height: 30%;" id="extraInfo" placeholder="Further instructions for event planner or stage operators"></textarea>
                     <button onclick="createNewEvent()" class="closeBtn">Finalize</button><button onclick="OverviewOff()" class="closeBtn">Cancel</button>
                 </div> 
             </div>
         </div>
+        <!--Model button Container, buttons get created in script.js-->
         <div class="listcontainer" id="modelButtonContainer">
             <div class="listHeader"><h1>Select Stage</h1><button onclick="on()">Filter</button></div>
         </div>
@@ -150,5 +163,6 @@
 <script src="js/createEvent.js"></script>
 <script src="js/script.js"></script>
 <script src="js/buttonscript.js"></script>
+<link rel="stylesheet" href="css/stylesheet.css">
 
 </html>

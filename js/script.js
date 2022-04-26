@@ -114,7 +114,7 @@ function MakeButtons() {
         button.className = "stagecontainer";
         button.classList.add('model-load-button');
         title.innerHTML = modelFilter[i].name;
-        thumbnail.innerHTML="<img ' width=\'100px\' height=\'150px\' src="+ modelFilter[i].thumbsrc + ">";
+        thumbnail.innerHTML="<img class='stageimage' src="+ modelFilter[i].thumbsrc + ">";
         description.innerHTML = modelFilter[i].description;
         tags.innerHTML ="/"+modelFilter[i].tags+"/";
         //Appending to Parents
