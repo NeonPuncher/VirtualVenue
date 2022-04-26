@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Event Calendar</title>
+    <meta charset='utf-8' />
+    <link href='node_modules/fullcalendar/main.css' rel='stylesheet' />
+    <link href="css/calendarstyle.css" rel="stylesheet">
+    <script src='node_modules/fullcalendar/main.js'></script>
+    <script src="js/Calendar.js"></script>
+  </head>
+  <body>
+    <div class="CreateNewEvent" id="NewEventPromt">
+            <h2>Event Stream and Date</h2>
+            <a href="javascript:void(0)" class="closebtn" onclick="off()">&times;</a>
+            <hr>
+            <div class="StreamInfo">
+                <div>
+                  <h3>Title</h3>
+                  <input type="text" id="title" class="textInput">
+                  <button class="applyBtn">Apply</button>
+                </div>
+                <div>
+                    <h3>Stream URL</h3>
+                    <input class="text" id="streamlink" type="text">
+                    <button class="applyBtn">Apply</button>
+                </div>
+            </div>
+            <h3>Date and Time</h3>
+            <div class="TimeInfo">
+                <h4>Event Date:</h4><input type="date" id="date">
+                <h4>Event duration: </h4><input type="time" id="starttime"><h4>To</h4><input type="time" id="endtime">
+            </div>
+            <button class="EditBtn" onclick="getDate()">Continue</button>
+
+    </div>
+      <div class="container">
+        <div class="CalendarDiv" id='calendar'></div>
+        <div class="CalendarInfo">
+            <img class="infoImg" id="infoImg" src="images/ConcerthalThumb.jpg">
+            <h3>Event Name:</h3>
+            <p id="eventName"></p>
+            <h3>Event Start Date:</h3>
+            <p id="eventStartTime"></p>
+            <h3>Event End Date:</h3>
+            <p id="eventEndTime"></p>
+            <h3>Maximum Users:</h3>
+            <p id="maxUsers"></p>
+            <h3>Event Type:</h3>
+            <p id="eventType"></p>
+            <h3>Extra Info:</h3>
+            <p id="extraInfo"></p>
+            <button class="EditBtn">Edit</button>
+        </div>
+      </div>
+  </body>
+</html>

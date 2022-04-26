@@ -1,0 +1,251 @@
+body {
+    overflow: hidden;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 1.3vw;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
+h3 {
+    font-weight: bold;
+    margin-right: 3%;
+    font-size: 1.1vw;
+}
+
+h4{
+    font-size: 1vw;
+    color: #70ADFF;
+}
+
+p {
+    font-size: 1vw;
+}
+
+textarea {
+    border-radius: 12px;
+    width: 100%; 
+    resize: none; 
+    padding: 1%;
+}
+
+label {
+    font-size: 1vw;
+}
+
+button {
+    font-size: 1vw;
+}
+
+input {
+    margin-right: 3px;
+    font-size: 1vw;
+}
+
+input[type="number"] {
+    margin: 2%;
+    width: 30%;
+    text-align: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.overlay {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    width: 0vw;
+    transition: 0.5s;
+    background: #E0E0E0;
+}
+
+.overlay-content {
+    display: none;
+    transition: 1s;
+}
+
+.FilterHeader {
+    background-color: #70ADFF;
+    padding: 1%;
+    color: white;
+}
+
+
+.VenueType {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.CustomType {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.Item {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.NumberInput > div {
+    margin: 1%;
+    display: inline-block;
+}
+
+.listcontainer {
+    background-color: lightgray;
+    overflow-x:hidden;
+    width: 40%;
+    height: 100vh;
+}
+
+.listHeader {
+    background-color: #70ADFF;
+    color: white;
+    margin: 0%;
+    padding: 2%;
+}
+
+.ApplyBtn {
+    background-color: #70ADFF;
+    color: white;
+    margin-top: 1.5%;
+    float: right;
+    border-radius: 25px;
+    width: 100%;
+    padding: 1%;
+}
+
+.customizePage {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    z-index: 3;
+    background-color: #EFEFEF;
+    border: 1px solid #707070;
+    border-radius: 2rem;
+    padding: 1%;
+    -webkit-box-shadow: 1px 5px 12px -6px #000000; 
+    box-shadow: 1px 5px 12px -6px #000000;
+}
+
+.customizeRow {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.customizeRow > div {
+    flex: 1;
+}
+
+.customImg {
+    width: 30%;
+    float: left;
+    margin: 2%;
+}
+
+.customBtn {
+    background-color: #70ADFF;
+    border: none;
+    float: right;
+    border-radius: 12px;
+    padding: 2%;
+    margin: 2%;
+    color: white;
+}
+
+.closeBtn {
+    background-color: #70ADFF;
+    border: none;
+    float: right;
+    margin-right: 1%;
+    margin-top: 2%;
+    font-size: 1vw;
+    border-radius: 12px;
+    padding: 1%;
+    color: white;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    background-color: white;
+    display: inline-block;
+    padding: 1;
+    width: 70%;
+    cursor: pointer;
+}
+
+.emoteContainer {
+    background-color: white;
+    height: 14vh;
+    overflow-y: scroll;
+}
+
+.emoteContainer > div > * {
+    display: inline-block;
+    padding: 1%;
+    margin-right: 7%;
+}
+
+.EventContent {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+/*Deze nog aanpassen*/   
+.stageName {
+    position: absolute;
+    z-index: 2;
+    padding: 1%;
+    margin: 1%;
+    background-color: #70ADFF;
+    border-radius: 12px;
+    color: white;
+}
+
+/*Deze nog aanpassen*/   
+.canvasDiv {
+    position: absolute;
+    z-index: 2;
+    padding: 1%;
+    display: flex;
+    margin-left: 51vw;
+    margin-top: 90vh;
+}
+
+.canvasBtn {
+    background-color: #70ADFF;
+    border-radius: 12px;
+    flex: 1;
+    margin: 2%;
+    color: white;
+    font-size: 1.2vw;
+    padding: 5%;
+}
+
+.stagecontainer {
+    display:inline-grid;
+    grid-template-columns: auto auto auto;
+    background-color: #70ADFF;
+    width: 100%;
+    color: white;
+    border-radius: 4px;
+    margin: 1%;
+    padding: 1%;
+}
+
+.stageimage {
+    width: 75%;
+}

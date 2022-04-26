@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <title>Virtual Stage Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+    <div class="customizePage" id="customizePage">
+        <h2>Customize Options</h2>
+        <hr>
+        <div class="customizeRow">
+            <div>
+                <h3>Custom Banners:</h3>
+                <img class="customImg" src="images/EffenaarThumb.jpg"><h3>Image URL:</h3><input type="text">
+                <button class="customBtn">Apply</button><button class="customBtn">Discard</button>
+            </div>
+            <div>
+                <h3>Lighting Settings:</h3>
+                <h3 style="display: inline-block;">DMX File:</h3><label for="file-upload" class="custom-file-upload">Custom Upload</label><input id="file-upload" type="file"/>
+                <h3 style="display: inline-block;">Unified BPM:</h3><input type="number" style="display: inline-block;">
+                <h3 style="display: inline-block;">Lighting Colour:</h3><input type="color" style="display: inline-block;">
+            </div>
+        </div>
+        <div class="customizeRow">
+            <div>
+                <h3>Custom Backdrop:</h3>
+                <img class="customImg" src="images/EffenaarThumb.jpg"><h3>Image URL:</h3><input type="text">
+                <button  class="customBtn">Apply</button><button  class="customBtn">Discard</button>
+            </div>
+            <div>
+                <h3>Visitor Emotes:</h3>
+                <div class="emoteContainer">
+                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="closeBtn" onclick="CustomOff()">Apply</button>
+            <button class="closeBtn" onclick="CustomOff()">Discard</button>
+        </div>
+    </div>
+    <div class="w-full flex">
+        <div class="overlay" id="overlay">
+            <div class="overlay-content" id="overlay-content">
+                <div class="FilterHeader">
+                    <h1>Virtual Stage Filter</h1>
+                    <a href="javascript:void(0)" class="closebtn" onclick="off()">&times;</a>
+                </div>
+                <div style="padding: 2%;">
+                <div>
+                    <h3>Tags</h3><h4>Explination</h4>
+                    <textarea id="tagArea" style="height: 15%;"></textarea>
+                </div>
+                <h3>Type of Venue</h3><h4>Explination</h4>
+                <div class="VenueType">
+                    <div class="Item"><input type="checkbox" id="ConcertHall" name="ConcertHall"><label for="ConcertHall">ConcertHall</label></div>
+                    <div class="Item"><input type="checkbox" id="Stadium" name="Stadium"><label for="Stadium">Stadium</label></div>
+                    <div class="Item"><input type="checkbox" id="Nature" name="Nature"><label for="Nature">Nature</label></div>
+                    <div class="Item"><input type="checkbox" id="SmallCafe" name="SmallCafe"><label for="SmallCafe">Small Cafe</label></div>
+                    <div class="Item"><input type="checkbox" id="Live" name="Live"><label for="Live">Live Studio</label></div>
+                    <div class="Item"><input type="checkbox" id="SmallParty" name="SmallParty"><label for="SmallParty">Small party</label></div>
+                    <div class="Item"><input type="checkbox" id="OpenAir" name="OpenAir"><label for="OpenAir">Open air venue</label></div>
+                    <div class="Item"><input type="checkbox" id="Abstract" name="Abstract"><label for="Abstract">Abstract</label></div>
+                    <div class="Item"><input type="checkbox" id="Monuments" name="Monuments"><label for="Monuments">Monuments</label></div>
+                </div>
+                <h3>Venue Size</h3><h4>Explination</h4>
+                <div class="Numberinput">
+                    <div><p>Amount of Visitors: </p></div>
+                    <div><input type="text" maxlength="4" size="4"></div>
+                    <div><p>to</p></div>
+                    <div><input type="text" maxlength="4" size="4"></div>
+                </div>
+                <div class="Numberinput">
+                    <div><p>Amount of People on Stage: </p></div>
+                    <div><input type="text" maxlength="4" size="4"></div>
+                    <div><p>to</p></div>
+                    <div><input type="text" maxlength="4" size="4"></div>
+                </div>
+                <h3>Custimization</h3><h4>Explination</h4>
+                <div class="CustomType">
+                    <div class="Item"><input type="checkbox" id="CLights" name="CLights"><label for="CLights">Custom Lights</label></div>
+                    <div class="Item"><input type="checkbox" id="Animated" name="Animated"><label for="Animated">Animated Objects</label></div>
+                    <div class="Item"><input type="checkbox" id="Interact" name="Interact"><label for="Interact">Interactable Objects</label></div>
+                    <div class="Item"><input type="checkbox" id="CBackdrop" name="CBackdrop"><label for="CBackdrop">Custom Backdrop</label></div>
+                    <div class="Item"><input type="checkbox" id="AuEmote" name="AuEmote"><label for="AuEmote">Audience Emote</label></div>
+                    <div class="Item"><input type="checkbox" id="3DImage" name="3DImage"><label for="3DImage">3D Images</label></div>
+                </div>
+                    <button class="closeBtn" onclick="off(); MakeButtons(); ModelLoader()">Apply</button>
+                    <button class="closeBtn" onclick="off(); MakeButtons(); ModelLoader()">Cancel</button>
+                </div>
+            </div> 
+        </div>
+        <div class="overlay" id="overview">
+            <div class="overlay-content" id="overview-content">
+                <div class="FilterHeader">
+                    <h1>Event Overview</h1>
+                    <a href="javascript:void(0)" class="closebtn" onclick="OverviewOff()">&times;</a>
+                </div>
+                <div style="padding: 3%;">
+                    <h2>Event Information</h2>
+                    <div class="eventContent">
+                        <h3>Event name:</h3><input type="text" id="eventTitle">
+                        <h3>Event type:</h3>
+                        <select name="EventTypes" id="EventTypes">
+                            <option value="groupband">Group band</option>
+                            <option value="soloartist">Solo artist</option>
+                            <option value="duoartist">Duo artist</option>
+                            <option value="quartet">Quartet</option>
+                            <option value="soloband">Solo arist with band</option>
+                        </select>
+                        <h3>Event date:</h3><div style="display: flex;"><input type="date" id="datum"><input type="time" id="starttime"><h4>To</h4><input type="time" id="endtime"></div>
+                        <h3>Stream URL:</h3><input type="text" id="streamUrl">
+                        <h3>Host URL:</h3><input type="text" id="hostUrl">
+                        <h3>Max. Users:</h3><input type="text" id="maxUsers">
+                        <h3>Scene Name:</h3><p id="sceneName">Test</p><p id="thumbnailsrc">Test</p>
+                    </div>
+                    <hr>
+                    <h2>Event description</h2>
+                    <textarea style="height: 30%;" id="extraInfo"></textarea>
+                    <button onclick="createNewEvent()" class="closeBtn">Finalize</button><button onclick="OverviewOff()" class="closeBtn">Cancel</button>
+                </div> 
+            </div>
+        </div>
+        <div class="listcontainer" id="modelButtonContainer">
+            <div class="listHeader"><h1>Select Stage</h1><button onclick="on()">Filter</button></div>
+        </div>
+        <div  id="canvas">
+            <div class="stageName" ><h2>3D Visual Representation of the Scene</h2></div>
+            <div class="canvasDiv">
+                <button onclick="CustomOn()" class="canvasBtn">Customize</button>
+                <button onclick="OverviewOn()" class="canvasBtn">Proceed</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/three@0.139.2/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.139.2/examples/js/controls/OrbitControls.js"></script>
+<script src="https://unpkg.com/three@0.139.2/examples/js/loaders/GLTFLoader.js"></script>
+<script src="js/createEvent.js"></script>
+<script src="js/script.js"></script>
+<script src="js/buttonscript.js"></script>
+
+</html>

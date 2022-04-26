@@ -1,0 +1,140 @@
+body {
+    overflow: hidden;
+}
+
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input {
+    padding: 1%;
+    border: 1px solid black;
+    height: 30%;
+    border-radius: 12px;
+}
+
+.container {
+    z-index: 1;
+    display: flex;
+    grid-template-rows: 75vw, 25vw;
+}
+
+.CreateNewEvent {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    width: 40vw;
+    z-index: 3;
+    background-color: #EFEFEF;
+    border: 1px solid #707070;
+    border-radius: 2rem;
+    padding: 1%;
+    -webkit-box-shadow: 1px 5px 12px -6px #000000; 
+    box-shadow: 1px 5px 12px -6px #000000;
+}
+
+.closebtn {
+    float: right;
+    font-size: 1.3rem;
+    margin-top: -30px;
+}
+
+.applyBtn {
+    border-radius: 12px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 3%;
+    -webkit-box-shadow: 1px 5px 12px -6px #000000; 
+    box-shadow: 1px 5px 12px -6px #000000;
+}
+
+.applyBtn:hover {
+    background-color: #f0f0f0;
+}
+
+.applyBtn:active {
+    background-color: #dedede;
+}
+
+.StreamInfo {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.StreamInfo > div {
+    flex: 1;
+}
+
+.TimeInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.textInput {
+    width: 70%;
+}
+
+
+.CalendarDiv {
+    flex: 6;
+}
+
+.CalendarInfo {
+    flex: 1;
+    margin-left: 1%;
+    background-color: #E0E0E0;
+    height: 92vh;
+    overflow-y: scroll;
+    border-radius: 1rem;
+    padding: 1%;
+}
+
+.infoImg {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 2rem;
+    -webkit-box-shadow: 1px 5px 12px -6px #000000; 
+    box-shadow: 1px 5px 12px -6px #000000;
+}
+
+.EditBtn {
+    background-color: #70ADFF;
+    width: 100%;
+    font-size: larger;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    -webkit-box-shadow: 1px 5px 12px -6px #000000; 
+    box-shadow: 1px 5px 12px -6px #000000;
+}
+
+.EditBtn:hover {
+    background-color: #3b7ed9;
+}
+
+.fc .fc-button {
+    background-color: #70ADFF;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 15px;
+    border: none;
+    -webkit-box-shadow: 1px 5px 12px -6px #000000; 
+    box-shadow: 1px 5px 12px -6px #000000;
+}
+
+.fc .fc-button:hover {
+    background-color: #3b7ed9;
+}
+.fc .fc-daygrid-day.fc-day-today {
+    background-color: #f5f5f5;
+}
+
+.fc .fc-timegrid-col.fc-day-today {
+    background-color: #f5f5f5;
+  }
