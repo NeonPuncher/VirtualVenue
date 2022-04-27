@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'timeGridWeek',
-      height: 720,
+      height: 1000,
       events: [],
       aspectRatio: 1,
       headerToolbar: {

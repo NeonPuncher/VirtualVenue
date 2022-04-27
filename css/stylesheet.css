@@ -102,7 +102,7 @@ input[type="file"] {
 .listcontainer {
     background-color: lightgray;
     overflow-x:hidden;
-    flex: 1;
+    flex: 1.5;
     height: 100vh;
 }
 
@@ -203,6 +203,14 @@ input[type="file"] {
     padding: 2%;
 }
 
+#canvas {
+    flex: 3.2;
+    height: 100%;
+    width: 100vh;
+    display: block;
+
+}
+
 /*Deze nog aanpassen*/   
 .stageName {
     position: absolute;
@@ -217,7 +225,6 @@ input[type="file"] {
 /*Deze nog aanpassen*/   
 .canvasDiv {
     position: absolute;
-    z-index: 2;
     padding: 1%;
     display: flex;
     margin-left: 51vw;
@@ -247,14 +254,16 @@ input[type="file"] {
 }
 
 .stageimage {
-    width: 100px;
+    width: 120px;
     border-radius: 12px;
 }
 
 .Sidbar {
-    flex: .18;
+    flex: .2;
+    display: flex;
+    flex-direction: column;
     background-color: #70ADFF;
-    height: 100vh;
+    height: 100%;
 }
 
 .SideBtn {
@@ -262,6 +271,7 @@ input[type="file"] {
     flex-direction: column;
     align-items: center;
     color: white;
+    position: relative;
     padding-top: 5%;
     margin-bottom: 10%;
     background-color: transparent;
@@ -270,7 +280,7 @@ input[type="file"] {
 
 .SideImg {
     padding: 5%;
-    width: 75%;
+    width: 70%;
 }
 
 .SideBtn:hover {
@@ -283,9 +293,15 @@ input[type="file"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     background-color:#3b7ed9;
     color: white;
     padding-top: 5%;
     margin-bottom: 10%;
     text-align: center;
+}
+
+.Sidefill {
+    flex-grow: 1;
+    height: 30vh;
 }

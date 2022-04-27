@@ -88,7 +88,7 @@ function LoadModel(modelPath, scale, loaded) {
 
 //3D model Renderer Variables
 const containerWidth = 1000;
-const containerHeight = 750;
+const containerHeight = window.innerHeight
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, containerWidth / containerHeight, 0.1, 1000);
 let activeModel = null;
