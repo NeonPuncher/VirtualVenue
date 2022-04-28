@@ -53,11 +53,12 @@
         <div class="Sidbar">
             <img src="images/EffenaarLogo.png" style="width: 200px; margin-bottom: 30%;">
             <div>
-                <div class="SideBtn" id="Calendar" onclick="Calendar()"><img src="images/calendarWhite.png" class="SideImg"><label>Agenda</label></div>
                 <div class="SideBtnA" id="TestStage" onclick="TestStage()"><img src="images/StageIcon.png" class="SideImg"><label>Stages</label></div>
-                <div class="SideBtn" id="RequestStage" onclick="ReqeustStage()"><img src="images/RequestIcon.png" class="SideImg"><label>Request</label></div>
+                <div class="SideBtn" id="Filter" onclick="on()"><img src="images/FilterIcon.png" class="SideImg"><label>Filter</label></div>
+                <div class="SideBtn" id="Customize" onclick="CustomOn()"><img src="images/CustomizeIcon.png" class="SideImg"><label>Customize</label></div>
+                <div class="SideBtn" id="Proceed" onclick="OverviewOn()"><img src="images/Checkmark.png" class="SideImg"><label>Proceed</label></div>
                 <div class="Sidefill"></div>
-                <div class="SideBtn" id="LogOut" onclick="LogOut()"><img src="images/LogoutIcon.png" class="SideImg"><label>LogOut</label></div>
+                <div class="SideBtn" id="Back" onclick="Calendar()"><img src="images/back.png" class="SideImg"><label>Back</label></div>
                 <div class="Sidefill"></div>
             </div>
           </div>
@@ -135,7 +136,7 @@
                         </select>
                         <h3>Host URL:</h3><input type="text" id="hostUrl" placeholder="https://www.queen.com/VirtualVenue">
                         <h3>Max. Users:</h3><input type="number" id="maxUsers">
-                        <h3>Scene Name:</h3><p id="sceneName">Test</p><p id="thumbnailsrc">Test</p>
+                        <h3>Scene Name:</h3><p id="sceneName">None (REQUIRED!)</p><p id="thumbnailsrc"></p>
                     </div>
                     <hr>
                     <h2>Event Instructions</h2>
@@ -146,14 +147,11 @@
         </div>
         <!--Model button Container, buttons get created in script.js-->
         <div class="listcontainer" id="modelButtonContainer">
-            <div class="listHeader"><h1>Select Stage</h1><button onclick="on()">Filter</button></div>
+            <div class="listHeader"><h1>Select Stage</h1></div>
         </div>
         <div id="canvas">
             <div class="stageName" ><h2>3D Visual Representation of the Scene</h2></div>
-            <div class="canvasDiv">
-                <button onclick="CustomOn()" class="canvasBtn">Customize</button>
-                <button onclick="OverviewOn()" class="canvasBtn">Proceed</button>
-            </div>
+
         </div>
     </div>
 </body>
