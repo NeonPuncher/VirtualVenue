@@ -18,6 +18,14 @@ input {
     border-radius: 12px;
 }
 
+select {
+    font-size: 1vw;
+    padding: 1%;
+    margin-top: 5%;
+    border-radius: 12px;
+    width: 100%;
+}
+
 .container {
     z-index: 1;
     display: flex;
@@ -160,6 +168,7 @@ input {
 .EditBtn {
     background-color: #70ADFF;
     width: 100%;
+    display: none;
     font-size: larger;
     color: white;
     border: none;
@@ -184,6 +193,10 @@ input {
 
 .fc .fc-button:hover {
     background-color: #3b7ed9;
+}
+
+.fc .fc-button:focus {
+    background-color: #225296;
 }
 .fc .fc-daygrid-day.fc-day-today {
     background-color: #f5f5f5;

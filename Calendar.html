@@ -40,7 +40,7 @@
           <div>
             <div class="SideBtnA" id="Calendar" onclick="Calendar()"><img src="images/calendarWhite.png" class="SideImg"><label>Agenda</label></div>
             <div class="SideBtn" id="TestStage" onclick="TestStage()"><img src="images/StageIcon.png" class="SideImg"><label>Test Stages</label></div>
-            <div class="SideBtn" id="RequestStage" onclick="ReqeustStage()"><img src="images/RequestIcon.png" class="SideImg"><label>Request</label></div>
+            <div class="SideBtn" id="RequestStage" onclick="ReqeustStage()"><img src="images/RequestIcon.png" class="SideImg"><label>Request Stage</label></div>
             <div class="Sidefill"></div>
             <div class="SideBtn" id="LogOut" onclick="LogOut()"><img src="images/LogoutIcon.png" class="SideImg"><label>LogOut</label></div>
             <div class="Sidefill"></div>
@@ -48,6 +48,15 @@
         </div>
         <div class="CalendarDiv" id='calendar'></div>
         <div class="CalendarInfo">
+            <button class="EditBtn" id="EditBtn" onclick="pushNewEvent()">Edit</button>
+            <select name="Status" id="Status" onchange="changeStatus()" >
+              <option value="" disabled selected>Event Status</option>
+              <option value="Completed">Completed</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Awaiting Approval">Awaiting Approval</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+            <hr>
             <img class="infoImg" id="infoImg" src="">
             <h3>Event Name:</h3>
             <p id="eventName"></p>
@@ -61,7 +70,7 @@
             <p id="hostApp"></p>
             <h3>Event Instructions:</h3>
             <p id="extraInfo"></p>
-            <button class="EditBtn">Edit</button>
+
         </div>
       </div>
   </body>

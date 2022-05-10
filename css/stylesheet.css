@@ -107,10 +107,16 @@ input[type="file"] {
 }
 
 .listHeader {
+    display: flex;
+    justify-content: space-between;
     background-color: #70ADFF;
     color: white;
     margin: 0%;
     padding: 2%;
+}
+
+.BtnIcon {
+    width: 5%;
 }
 
 .ApplyBtn {
@@ -227,18 +233,22 @@ input[type="file"] {
     position: absolute;
     padding: 1%;
     display: flex;
-    margin-left: 51vw;
-    margin-top: 90vh;
+    margin-left: 50vw;
+    margin-top: 89vh;
 }
 
 .canvasBtn {
     background-color: #70ADFF;
     border-radius: 12px;
     flex: 1;
-    margin: 2%;
+    margin: 3%;
     color: white;
     font-size: 1.2vw;
-    padding: 5%;
+    padding: 8%;
+}
+
+.canvasBtn:hover {
+    background-color: #3b7ed9;
 }
 
 .stagecontainer {

@@ -11,20 +11,20 @@ const models = [
         scale: 0.3
     },
     {
-        name: "Monster",
-        description: "The scary monster from hitgame Tarnished",
-        thumbsrc: "./images/MonsterThumb.jpg",
-        path: "./models//Monster.glb",
-        tags: ["Scary","Monster","Big","Spooky"],
-        scale: 2
+        name: "Cyber City",
+        description: "A Cyber City fit for EDM music, the color of the building lights is reactive to the beat of the music.",
+        thumbsrc: "./images/CyberCityThumb.jpg",
+        path: "./models/CyberCity.glb",
+        tags: ["Cyber","City","EDM","Lights"],
+        scale: 0.3
     },
     {
-        name: "Hornet",
-        description: "A character from the hitgame Hollow Knight",
-        thumbsrc: "./images/HornetThumb.jpg",
-        path: "./models/Hornet.glb",
-        tags: ["Insect","Monster","Bug","Shaw"],
-        scale: 0.7
+        name: "Dream Beach Club",
+        description: "A relaxing dream beach club with neon palms and summery vibes",
+        thumbsrc: "./images/BeachThumb.jpg",
+        path: "./models/Beach.glb",
+        tags: ["Beach","Summer","Dream"],
+        scale: 0.3
     },
     {
         name: "Concert Hal",
@@ -43,13 +43,13 @@ const models = [
         scale: 2
     },
     {
-        name: "Cucumber",
-        description: "A green cucumber that is a 1:1 recreation of a real cucumber.",
-        thumbsrc: "./images/KomkommerThumb.jpg",
-        path: "./models/Komkommer.glb",
-        tags: ["Green","Monster","Long","Moist"],
-        scale: 5
-    }
+        name: "Monster",
+        description: "The scary monster from hitgame Tarnished",
+        thumbsrc: "./images/MonsterThumb.jpg",
+        path: "./models//Monster.glb",
+        tags: ["Scary","Monster","Big","Spooky"],
+        scale: 2
+    },
 ];
 
 //Model Filter
@@ -68,10 +68,8 @@ function filter() {
 //Add lighting
 function AddLights(scene) {
     const light = new THREE.DirectionalLight(0xffffff, 2);
-    const light2 = new THREE.DirectionalLight(0xfc035a, 1);
     light.position.set(2, 2, 5);
-    light.position.set(-2, 2, -3);
-    scene.add(light, light2);
+    scene.add(light);
 }
 
 //LoadModel function
@@ -164,7 +162,7 @@ function animate() {
     requestAnimationFrame(animate);
 
     if (activeModel) {
-        activeModel.rotation.y += 0.003;
+        activeModel.rotation.y += 0.00001;
     }
 
     controls.update();

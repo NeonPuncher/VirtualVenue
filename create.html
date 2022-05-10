@@ -21,7 +21,7 @@
                 <h3>Lighting Settings:</h3>
                 <h3 style="display: inline-block;">DMX File:</h3><label for="file-upload" class="custom-file-upload">Custom Upload</label><input id="file-upload" type="file"/>
                 <h3 style="display: inline-block;">Unified BPM:</h3><input type="number" style="display: inline-block;">
-                <h3 style="display: inline-block;">Lighting Colour:</h3><input type="color" style="display: inline-block;">
+                <h3 style="display: inline-block;">Lighting Colour:</h3><input type="color" id="lightColor" style="display: inline-block;">
             </div>
         </div>
         <div class="customizeRow">
@@ -53,10 +53,7 @@
         <div class="Sidbar">
             <img src="images/EffenaarLogo.png" style="width: 200px; margin-bottom: 30%;">
             <div>
-                <div class="SideBtnA" id="TestStage" onclick="TestStage()"><img src="images/StageIcon.png" class="SideImg"><label>Stages</label></div>
-                <div class="SideBtn" id="Filter" onclick="on()"><img src="images/FilterIcon.png" class="SideImg"><label>Filter</label></div>
-                <div class="SideBtn" id="Customize" onclick="CustomOn()"><img src="images/CustomizeIcon.png" class="SideImg"><label>Customize</label></div>
-                <div class="SideBtn" id="Proceed" onclick="OverviewOn()"><img src="images/Checkmark.png" class="SideImg"><label>Proceed</label></div>
+                <div class="Sidefill"></div>
                 <div class="Sidefill"></div>
                 <div class="SideBtn" id="Back" onclick="Calendar()"><img src="images/back.png" class="SideImg"><label>Back</label></div>
                 <div class="Sidefill"></div>
@@ -147,11 +144,11 @@
         </div>
         <!--Model button Container, buttons get created in script.js-->
         <div class="listcontainer" id="modelButtonContainer">
-            <div class="listHeader"><h1>Select Stage</h1></div>
+            <div class="listHeader"><h1>Select Stage</h1><button onclick="on()"><h3>Filter</h3></button></div>
         </div>
         <div id="canvas">
             <div class="stageName" ><h2>3D Visual Representation of the Scene</h2></div>
-
+            <div class="canvasDiv"><button class="canvasBtn" onclick="CustomOn()"><h3>Customize</h3></button><button class="canvasBtn" onclick="OverviewOn()"><h3>Proceed</h3></button></div>
         </div>
     </div>
 </body>

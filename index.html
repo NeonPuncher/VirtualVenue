@@ -18,15 +18,27 @@
                 <h1>Login</h1>
                 <div class="flex-wrap">
                     <h3>E-mail</h3>
-                    <input type="email">
+                    <input type="email" id="email">
                     <h3>Password</h3>
                     <input type="password">
                 </div>
                 <hr>
-                <a href="Calendar.html"><button class="loginBtn">Log-in</button></a>
+                <button class="loginBtn" onclick="checkLog()">Log-in</button>
                 <button class="loginBtn">Forgot Password</button>
             </div>
         </div>
     </div>
 </body>
+<script>
+    function checkLog() {
+        let email = document.getElementById('email').value;
+        console.log(email)
+        if(email == 'programmeur@effenaar.com'){
+            location.href = "http://127.0.0.1:5500/Calendar.html";
+        }
+        if(email == 'productieleider@effenaar.com'){
+            location.href = "http://127.0.0.1:5500/Calendar2.html";
+        }
+    }
+</script>
 </html>
