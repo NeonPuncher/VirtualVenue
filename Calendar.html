@@ -11,8 +11,10 @@
   </head>
   <body>
     <div class="CreateNewEvent" id="NewEventPromt">
-            <h2>Event Stream and Date</h2>
-            <a href="javascript:void(0)" class="closebtn" onclick="Eoff()">&times;</a>
+            <div class="EventHeader">
+              <h2>Event Stream and Date</h2>
+              <button class="closebtn" onclick="Eoff()">X</button>
+            </div>
             <hr>
             <div class="StreamInfo">
                 <div>
@@ -38,7 +40,7 @@
         <div class="Sidbar">
           <img src="images/EffenaarLogo.png" style="width: 70px; margin-bottom: 30%;">
           <div>
-            <div class="SideBtnA" id="Calendar" onclick="Calendar()"><img src="images/calendarWhite.png" class="SideImg"><label>Agenda</label></div>
+            <div class="SideBtn" id="Calendar" onclick="Calendar()"><img src="images/calendarWhite.png" class="SideImg"><label>Agenda</label></div>
             <div class="SideBtn" id="TestStage" onclick="TestStage()"><img src="images/StageIcon.png" class="SideImg"><label>Test Stages</label></div>
             <div class="SideBtn" id="RequestStage" onclick="ReqeustStage()"><img src="images/RequestIcon.png" class="SideImg"><label>Request Stage</label></div>
             <div class="Sidefill"></div>
@@ -48,13 +50,13 @@
         </div>
         <div class="CalendarDiv" id='calendar'></div>
         <div class="CalendarInfo">
-            <button class="EditBtn" id="EditBtn" onclick="pushNewEvent()">Edit</button>
+            <button class="EditBtn" id="EditBtn" onclick="pushNewEvent()" style="display: none;">Edit</button>
             <select name="Status" id="Status" onchange="changeStatus()" >
               <option value="" disabled selected>Event Status</option>
-              <option value="Completed">Completed</option>
-              <option value="In Progress">In Progress</option>
-              <option value="Awaiting Approval">Awaiting Approval</option>
-              <option value="Cancelled">Cancelled</option>
+              <option value="Completed">Status: Completed</option>
+              <option value="In Progress">Status: In Progress</option>
+              <option value="Awaiting Approval">Status: Awaiting Approval</option>
+              <option value="Cancelled">Status: Cancelled</option>
             </select>
             <hr>
             <img class="infoImg" id="infoImg" src="">

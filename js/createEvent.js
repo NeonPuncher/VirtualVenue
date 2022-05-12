@@ -5,6 +5,7 @@ console.log(newEvent);
 
 //Adding to the planning Array by saving it to the local storage
 //Get all elements to be displayed on the Overview Screen first
+document.getElementById('eventName').innerHTML = newEvent.title;
 document.getElementById('eventTitle').value = newEvent.title;
 document.getElementById('streamUrl').value = newEvent.link;
 document.getElementById('datum').value = newEvent.datum;

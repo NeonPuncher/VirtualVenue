@@ -48,10 +48,29 @@ select {
     box-shadow: 1px 5px 12px -6px #000000;
 }
 
+.EventHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .closebtn {
-    float: right;
-    font-size: 1.3rem;
-    margin-top: -30px;
+    background-color:#70ADFF;
+    height: 10%;
+    font-size: 1rem;
+    padding: 1%;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    -webkit-box-shadow: 1px 5px 12px -6px #000000; 
+    box-shadow: 1px 5px 12px -6px #000000;
+}
+
+.closebtn:hover {
+    background-color: #3b7ed9;
+    transition: 0.5s;
+
 }
 
 .applyBtn {
@@ -112,33 +131,20 @@ select {
     align-items: center;
     color: white;
     position: relative;
-    padding-top: 5%;
-    margin-bottom: 10%;
+    padding: 10%;
     background-color: transparent;
     text-align: center;
 }
 
 .SideImg {
     padding: 5%;
-    width: 70%;
+    width: 50%;
 }
 
 .SideBtn:hover {
     transition: .5s;
     background-color:#3b7ed9;
 
-}
-
-.SideBtnA {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    background-color:#3b7ed9;
-    color: white;
-    padding-top: 5%;
-    margin-bottom: 10%;
-    text-align: center;
 }
 
 .Sidefill {
@@ -168,7 +174,6 @@ select {
 .EditBtn {
     background-color: #70ADFF;
     width: 100%;
-    display: none;
     font-size: larger;
     color: white;
     border: none;

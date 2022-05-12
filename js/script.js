@@ -4,7 +4,7 @@ const loader = new THREE.GLTFLoader();
 const models = [
     {
         name: "Effenaar",
-        description: "The grote concerthal from the famous Effenaar",
+        description: "The grote concerthal from the famous Effenaar in Eindhoven",
         thumbsrc: "./images/EffenaarThumb.jpg",
         path: "./models/Effenaar.glb",
         tags: ["Indoor","Hall","Big","Crowded"],
@@ -85,7 +85,7 @@ function LoadModel(modelPath, scale, loaded) {
 }
 
 //3D model Renderer Variables
-const containerWidth = 1000;
+const containerWidth = 1200;
 const containerHeight = window.innerHeight
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, containerWidth / containerHeight, 0.1, 1000);
@@ -111,6 +111,7 @@ function MakeButtons() {
         button.setAttribute('model-id', i);
         button.className = "stagecontainer";
         button.classList.add('model-load-button');
+        textdiv.className = "textDiv";
         title.innerHTML = modelFilter[i].name;
         thumbnail.innerHTML="<img class='stageimage' src="+ modelFilter[i].thumbsrc + ">";
         description.innerHTML = modelFilter[i].description;
@@ -137,6 +138,7 @@ function MakeButtons() {
             scene.add(activeModel);
         });
         AddLights(scene);
+        document.getElementById('stageName').innerHTML = model.name;
         document.getElementById("sceneName").innerHTML = model.name;
         document.getElementById("thumbnailsrc").style.display = "none";
         document.getElementById("thumbnailsrc").innerHTML = model.thumbsrc;

@@ -99,20 +99,63 @@ input[type="file"] {
     display: inline-block;
 }
 
+.MainHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:#3b7ed9;
+    color: white;
+    width: 100%;
+    padding: .5%;
+    height: 7%;
+}
+
+.SubHeader {
+    display: flex;
+    flex-direction: row;
+    margin-right: 3%;
+    height: 100%;
+}
+
+.SubBtn {
+    background-color: #70ADFF;
+    color: white;
+    padding: 5%;
+    margin-left: 10%;
+    border-radius: 12px;
+}
+
+.SubBtn:hover {
+    background-color: #2a60ab;
+    transition: 0.5s;
+}
+
 .listcontainer {
-    background-color: lightgray;
+    background-color: white;
     overflow-x:hidden;
-    flex: 1.5;
-    height: 100vh;
+    height: 90vh;
 }
 
 .listHeader {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #70ADFF;
     color: white;
     margin: 0%;
-    padding: 2%;
+}
+
+.headerBtn {
+    background-color: #2a60ab;
+    width: 100%;
+}
+
+.active {
+    background-color:#70ADFF;
+}
+
+.headerBtn:hover {
+    background-color: #3b7ed9;
+    transition: 0.5s;
 }
 
 .BtnIcon {
@@ -132,8 +175,8 @@ input[type="file"] {
 .customizePage {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 53%;
+    left: 65%;
     transform: translate(-50%, -50%);
     width: 40vw;
     z-index: 3;
@@ -197,10 +240,10 @@ input[type="file"] {
     overflow-y: scroll;
 }
 
-.emoteContainer > div > * {
-    display: inline-block;
-    padding: 1%;
-    margin-right: 7%;
+.emoteContainer > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .EventContent {
@@ -221,11 +264,12 @@ input[type="file"] {
 .stageName {
     position: absolute;
     z-index: 2;
-    padding: 1%;
+    padding: .5%;
     margin: 1%;
-    background-color: #70ADFF;
-    border-radius: 12px;
-    color: white;
+    background-color: white;
+    color: black;
+    -webkit-box-shadow: 1px 5px 12px -6px #000000; 
+    box-shadow: 1px 5px 12px -6px #000000;
 }
 
 /*Deze nog aanpassen*/   
@@ -233,18 +277,8 @@ input[type="file"] {
     position: absolute;
     padding: 1%;
     display: flex;
-    margin-left: 50vw;
+    margin-left: 52vw;
     margin-top: 89vh;
-}
-
-.canvasBtn {
-    background-color: #70ADFF;
-    border-radius: 12px;
-    flex: 1;
-    margin: 3%;
-    color: white;
-    font-size: 1.2vw;
-    padding: 8%;
 }
 
 .canvasBtn:hover {
@@ -253,7 +287,7 @@ input[type="file"] {
 
 .stagecontainer {
     display:inline-grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     background-color: #70ADFF;
     border-radius: 12px;
     width: 100%;
@@ -261,6 +295,16 @@ input[type="file"] {
     border-radius: 4px;
     margin: 1%;
     padding: 1%;
+}
+
+.stagecontainer:hover {
+    background-color: #3b7ed9;
+    transition: 0.5s;
+}
+
+.textDiv {
+    margin-left: 3%;
+    text-align: left;
 }
 
 .stageimage {
@@ -282,33 +326,20 @@ input[type="file"] {
     align-items: center;
     color: white;
     position: relative;
-    padding-top: 5%;
-    margin-bottom: 10%;
+    padding: 10%;
     background-color: transparent;
     text-align: center;
 }
 
 .SideImg {
     padding: 5%;
-    width: 70%;
+    width: 50%;
 }
 
 .SideBtn:hover {
     transition: .5s;
     background-color:#3b7ed9;
 
-}
-
-.SideBtnA {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    background-color:#3b7ed9;
-    color: white;
-    padding-top: 5%;
-    margin-bottom: 10%;
-    text-align: center;
 }
 
 .Sidefill {
