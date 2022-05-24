@@ -14,8 +14,8 @@
             <h1 id="eventName">Name Event</h1>
         </div>
         <div class="SubHeader">
-            <button class="SubBtn" onclick="Calendar()"><h3>Cancel</h3></button>
-            <button class="SubBtn" onclick="createNewEvent()"><h3>Finalize</h3></button>
+            <button class="SubBtn" style="background-color: #bf2a2a;" onclick="Calendar()"><h3>Cancel</h3></button>
+            <button class="SubBtn" style="background-color: #2abf54;"  onclick="createNewEvent()"><h3>Finalize</h3></button>
         </div>
 
     </div>
@@ -116,27 +116,27 @@
         <div class="customizeRow">
             <div>
                 <h3>Custom Skybox:</h3>
-                <img class="customImg" src="images/skybox.jpg"><h3>Select Skybox</h3>
-                <select>
-                    <option value="" disabled selected>None</option>
-                    <option value="clear">Clear Day</option>
-                    <option value="clear">Night Sky</option>
-                    <option value="clear">Purple Nebula</option>
-                    <option value="clear">Underwater Scenery</option>
-                    <option value="clear">Snowy Mountain Range</option>
+                <img class="customImg" id="SkySelect" src="models/skybox/white_bk.png"><h3>Select Skybox</h3>
+                <select id="skyboxtex">
+                    <option value="white" disabled selected>None</option>
+                    <option value="river-c">Clear Day</option>
+                    <option value="sp">Night Sky</option>
+                    <option value="corona">Purple Nebula</option>
+                    <option value="uw">Underwater Scenery</option>
+                    <option value="snowalps">Snowy Mountain Range</option>
                 </select>
-                <button  class="customBtn">Apply</button><button  class="customBtn">Discard</button>
+                <button  class="customBtn" onclick="createSky(scene)">Apply</button><button  class="customBtn">Discard</button>
             </div>
             <div>
-                <h3>Visitor Emotes:</h3>
+                <h3>Extra Effects:</h3>
                 <div class="emoteContainer">
-                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>👍</h2><h4>Thumbs up!</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>🌫️</h2><h4>Smoke</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>🎆</h2><h4>Firework</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>🔥</h2><h4>Fire</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>🎛️</h2><h4>Bass tremble</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>🎵</h2><h4>Music visuals</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>⚡</h2><h4>Lasers</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>✨</h2><h4>Glowsticks</h4><p>Active:</p><input type="checkbox"></div>
                 </div>
             </div>
         </div>

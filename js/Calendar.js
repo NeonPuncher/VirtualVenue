@@ -2,6 +2,10 @@
 let eventList = JSON.parse(localStorage.getItem("eventlist") || ("[]"));
 let newEvent = [];
 
+//Get username
+let UserName = JSON.parse(sessionStorage.getItem("Username") || ("[]"));
+console.log(UserName);
+
 //Instantiate the Calendar
 //Specific Calendar options are loaded
 //Custom Calendar Header with custom buttons
@@ -13,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
       initialView: 'timeGridWeek',
       scrollTime: '18:00:00',
       height: window.innerHeight,
+      selectable: true,
+      selectOverlap: false,
+      unselectAuto: false,
+      nowIndicator: true,
       events: [],
       aspectRatio: 1,
       headerToolbar: {
@@ -22,8 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       eventClick: function(info) {
         document.getElementById("eventName").innerHTML = info.event.title;
-        document.getElementById("eventStartTime").innerHTML = info.event.start;
-        document.getElementById("eventEndTime").innerHTML = info.event.end;
+        document.getElementById("planner").innerHTML = info.event._def.extendedProps.planner;
+        document.getElementById("eventStartTime").innerHTML = info.event._def.extendedProps.startTijd +" / "+ info.event._def.extendedProps.datum;
+        document.getElementById("eventEndTime").innerHTML = info.event._def.extendedProps.eindTijd +" / "+ info.event._def.extendedProps.datum;
         document.getElementById("maxUsers").innerHTML = info.event._def.extendedProps.MUsers;
         document.getElementById("hostApp").innerHTML = info.event._def.extendedProps.HApp;
         document.getElementById("extraInfo").innerHTML = info.event._def.extendedProps.EInfo;
@@ -36,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         newEvent = {
           title: info.event.title,
+          planner: UserName,
           link: info.event._def.extendedProps.link,
           HApp: info.event._def.extendedProps.HApp,
           datum: info.event._def.extendedProps.datum,
@@ -68,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             calendar.addEventSource(eventList);
           }
         },
-      }
+      },
     });
     calendar.addEventSource(eventList);
     calendar.render();
@@ -90,6 +100,7 @@ function getDate() {
     if (!isNaN(startDate.valueOf())) { // valid?
       newEvent = {
         title: title,
+        planner: UserName,
         link: link,
         HApp: '',
         datum: datum,
@@ -134,6 +145,9 @@ function changeStatus() {
   if(eventList[index].Status == 'In Progress')
   {
     eventList[index].backgroundColor = '#edc40e';
+  }
+  if(eventList[index].Status == 'Vrijhouden'){
+    eventList[index].backgroundColor = '#fff173';
   }
   if(eventList[index].Status == 'Awaiting Approval')
   {

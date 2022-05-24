@@ -47,8 +47,12 @@
     location.href = "http://127.0.0.1:5500/Calendar.html";
   }
 
+  function CalendarPro() {
+    location.href = "http://127.0.0.1:5500/CalendarProductie.html";
+  }
+
   function TestStage() {
-    location.href = "http://127.0.0.1:5500/create.html";
+    location.href = "http://127.0.0.1:5500/createProductie.html";
   }
 
   function LogOut() {

@@ -35,6 +35,14 @@ const models = [
         scale: 0.4
     },
     {
+        name: "Small Town Cafe",
+        description: "A cozy cottage Bar that drives home country music and / or Carneval music",
+        thumbsrc: "./images/CafeThumb.jpg",
+        path: "./models/Cafe.glb",
+        tags: ["Small","Cafe","Country","Carneval"],
+        scale: 0.3
+    },
+    {
         name: "Melenia",
         description: "The blade of Miquella, sworn enemy of Radahn. One of the thoughest bosses in Elden Ring",
         thumbsrc: "./images/MeleniaThumb.jpg",
@@ -51,7 +59,6 @@ const models = [
         scale: 2
     },
 ];
-
 //Model Filter
 let modelFilter = [];
 function filter() {
@@ -65,9 +72,46 @@ function filter() {
     {modelFilter = models}
 }
 
+
+//Get Skybox Texture
+function createPathString(filename) {
+    const basePath = "./models/skybox/";
+    const baseFilename = basePath + filename;
+    const fileType = ".png";
+    const sides = ["ft","bk","up","dn","rt","lf"];
+    const pathString = sides.map(side => {
+        return baseFilename + "_" + side + fileType;
+    });
+
+    return pathString
+}
+//Map Skybox texture
+function createMaterialArray(filename) {
+  const skyboxImagepaths = createPathString(filename);
+  const materialArray = skyboxImagepaths.map(image => {
+    let texture = new THREE.TextureLoader().load(image);
+    return new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide }); // <---
+  });
+  return materialArray;
+}
+
+//Add Skybox
+function createSky(scene) {
+    var selectedObject = scene.getObjectByName("skybox");
+    scene.remove( selectedObject );
+    let skyboxImage = document.getElementById("skyboxtex").value;
+    document.getElementById("SkySelect").src = "./models/skybox/" + skyboxImage + "_bk.png";
+    const materialArray = createMaterialArray(skyboxImage);
+    skyboxGeo = new THREE.BoxGeometry(1000, 1000, 1000);
+    skybox = new THREE.Mesh(skyboxGeo, materialArray);
+    skybox.name = "skybox";
+    scene.add(skybox);
+}
+
+
 //Add lighting
 function AddLights(scene) {
-    const light = new THREE.DirectionalLight(0xffffff, 2);
+    const light = new THREE.DirectionalLight(0xffffff, 3);
     light.position.set(2, 2, 5);
     scene.add(light);
 }
@@ -136,9 +180,13 @@ function MakeButtons() {
         LoadModel(model.path, model.scale, (loadedModel) => {
             activeModel = loadedModel;
             scene.add(activeModel);
+            
         });
+        createSky(scene)
         AddLights(scene);
         document.getElementById('stageName').innerHTML = model.name;
+        document.getElementById('SName').value = model.name;
+        document.getElementById('SVersion').value = "V0.1_Prototype_1";
         document.getElementById("sceneName").innerHTML = model.name;
         document.getElementById("thumbnailsrc").style.display = "none";
         document.getElementById("thumbnailsrc").innerHTML = model.thumbsrc;

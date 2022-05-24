@@ -21,21 +21,10 @@ document.getElementById('thumbnailsrc').textContent = newEvent.thumbnailsrc;
 //By creating a new Event all items visible in the overview menu get added to the object and that object gets added to the array
 //Array gets pushed to the localStorage and the user will get redirected to the Calendar page
 function createNewEvent() {
-    let title = document.getElementById('eventTitle').value;
-    let link = document.getElementById('streamUrl').value;
     let datum = document.getElementById('datum').value;
-    let startTijd = document.getElementById('starttime').value;
-    let eindTijd = document.getElementById('endtime').value;
     let startDate = new Date(datum + 'T'+newEvent.startTijd+':00');
-    let endDate = new Date(datum + 'T'+newEvent.eindTijd+':00');
-    let hostApp = document.getElementById('hostApp').value;
-    let hostUrl = document.getElementById('hostUrl').value;
-    let maxUsers = document.getElementById('maxUsers').value;
-    let sceneName = document.getElementById('sceneName').textContent;
-    let extraInfo = document.getElementById('extraInfo').value; 
-    let ImageSource = document.getElementById('thumbnailsrc').textContent;
     let Status = 'In Progress';
-    let StatusColor = '#edc40e'
+    let StatusColor = '#edc40e';
 
     if (sceneName == '' || hostUrl == '' || hostApp == ''){
       Status = 'In Progress'
@@ -47,21 +36,21 @@ function createNewEvent() {
 
     if (!isNaN(startDate.valueOf())) { // valid?
       newEvent = {
-        id: newEvent.id,
-        title: title,
-        link: link,
-        HApp: hostApp,
-        datum: datum,
-        startTijd: startTijd,
-        eindTijd: eindTijd,
-        start: startDate,
-        end: endDate,
+        planner: newEvent.planner,
+        title: document.getElementById('eventTitle').value,
+        link: document.getElementById('streamUrl').value,
+        HApp: document.getElementById('hostApp').value,
+        datum: datum = document.getElementById('datum').value,
+        startTijd: document.getElementById('starttime').value,
+        eindTijd: eindTijd = document.getElementById('endtime').value,
+        start: new Date(datum + 'T'+newEvent.startTijd+':00'),
+        end: new Date(datum + 'T'+newEvent.eindTijd+':00'),
         allDay: false,
-        Host: hostUrl,
-        MUsers: maxUsers,
-        SName: sceneName,
-        EInfo: extraInfo,
-        ImgSrc: ImageSource,
+        Host: document.getElementById('hostUrl').value,
+        MUsers: document.getElementById('maxUsers').value,
+        SName: document.getElementById('sceneName').textContent,
+        EInfo: document.getElementById('extraInfo').value,
+        ImgSrc: document.getElementById('thumbnailsrc').textContent,
         Status: Status,
         backgroundColor: StatusColor,
       };

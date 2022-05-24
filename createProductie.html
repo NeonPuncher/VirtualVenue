@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <title>Virtual Stage Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!--Flexbox containing Sidebar/List of Models/Model viewer-->
+    <div class="MainHeader">
+        <div class="SubHeader">
+            <img src="images/EffenaarLogo.png">
+            <h1>Test Stages</h1>
+        </div>
+        <div class="SubHeader">
+            <button class="SubBtn" onclick="CalendarPro()"><h3>Return</h3></button>
+        </div>
+
+    </div>
+    <div class="w-full flex">
+        <!--Model button Container, buttons get created in script.js-->
+        <div style="flex: 1.5;">
+            <div class="listHeader" id="listHeader">
+                <button class="headerBtn active" onclick="ShowStages()"><h3>Select Stage</h3></button>
+                <button class="headerBtn" onclick="OverviewOn()"><h3>Feedback</h3></button>
+                <button class="headerBtn" onclick="CustomOn()"><h3>Customize</h3></button>
+            </div>
+        <!--Summary of the Whole Event that is planned-->
+        <div class="overlay" id="overview">
+            <div class="overlay-content" id="overview-content">
+                <div class="FilterHeader">
+                    <h1>Feedback environment</h1>
+                    <a href="javascript:void(0)" class="closebtn" onclick="OverviewOff()">&times;</a>
+                </div>
+                <div class="eventContent">
+                    <h3>Scene name:</h3><input type="text" id="SName">
+                    <h3>Scene version</h3><input type="text" id="SVersion">
+                    <h3>Scene Status:</h3>
+                    <select name="stageStatus" id="stageStatus">
+                        <option value="setup">Stage setup</option>
+                        <option value="feedback">Requires Feedback</option>
+                        <option value="complete">Completed</option>
+                        <option value="approved">Approved</option>
+                    </select>
+                    <hr>
+                    <h2>Feedback Form</h2>
+                    <textarea style="height: 30vh;" placeholder="Feedback here"></textarea> 
+                    <button class="closeBtn" onclick="OverviewOff()">Send Feedback</button>
+                </div>
+            </div>
+        </div>
+            <div class="listHeader">
+                <button class="headerBtn active" onclick="on()"><h3>Filter</h3></button>
+            </div>
+        <!--Filter Overlay-->
+        <div class="overlay" id="overlay">
+            <div class="overlay-content" id="overlay-content">
+                <div style="padding: 2%;">
+                <a href="javascript:void(0)" class="closebtn" onclick="off()">&times;</a>
+                <div>
+                    <h3>Tags</h3><h4>Explination</h4>
+                    <textarea id="tagArea" style="height: 15%;"></textarea>
+                </div>
+                <h3>Type of Venue</h3><h4>Explination</h4>
+                <div class="VenueType">
+                    <div class="Item"><input type="checkbox" id="ConcertHall" name="ConcertHall"><label for="ConcertHall">ConcertHall</label></div>
+                    <div class="Item"><input type="checkbox" id="Stadium" name="Stadium"><label for="Stadium">Stadium</label></div>
+                    <div class="Item"><input type="checkbox" id="Nature" name="Nature"><label for="Nature">Nature</label></div>
+                    <div class="Item"><input type="checkbox" id="SmallCafe" name="SmallCafe"><label for="SmallCafe">Small Cafe</label></div>
+                    <div class="Item"><input type="checkbox" id="Live" name="Live"><label for="Live">Live Studio</label></div>
+                    <div class="Item"><input type="checkbox" id="SmallParty" name="SmallParty"><label for="SmallParty">Small party</label></div>
+                    <div class="Item"><input type="checkbox" id="OpenAir" name="OpenAir"><label for="OpenAir">Open air venue</label></div>
+                    <div class="Item"><input type="checkbox" id="Abstract" name="Abstract"><label for="Abstract">Abstract</label></div>
+                    <div class="Item"><input type="checkbox" id="Monuments" name="Monuments"><label for="Monuments">Monuments</label></div>
+                </div>
+                <h3>Custimization</h3><h4>Explination</h4>
+                <div class="CustomType">
+                    <div class="Item"><input type="checkbox" id="CLights" name="CLights"><label for="CLights">Custom Lights</label></div>
+                    <div class="Item"><input type="checkbox" id="Animated" name="Animated"><label for="Animated">Animated Objects</label></div>
+                    <div class="Item"><input type="checkbox" id="Interact" name="Interact"><label for="Interact">Interactable Objects</label></div>
+                    <div class="Item"><input type="checkbox" id="CBackdrop" name="CBackdrop"><label for="CBackdrop">Custom Backdrop</label></div>
+                    <div class="Item"><input type="checkbox" id="AuEmote" name="AuEmote"><label for="AuEmote">Audience Emote</label></div>
+                    <div class="Item"><input type="checkbox" id="3DImage" name="3DImage"><label for="3DImage">3D Images</label></div>
+                </div>
+                    <button class="closeBtn" onclick="off(); MakeButtons(); ModelLoader()">Apply</button>
+                    <button class="closeBtn" onclick="off(); MakeButtons(); ModelLoader()">Cancel</button>
+                </div>
+            </div> 
+        </div>
+            <div class="listcontainer" id="modelButtonContainer"></div>
+        </div>
+        <div id="canvas">
+        <!--Customisation page (on top of all other elements)-->
+        <div class="customizePage" id="customizePage">
+        <h2>Customize Options</h2>
+        <hr>
+        <div class="customizeRow">
+            <div>
+                <h3>Custom Banners:</h3>
+                <img class="customImg" src="images/EffenaarThumb.jpg"><h3>Image URL:</h3><input type="text">
+                <button class="customBtn">Apply</button><button class="customBtn">Discard</button>
+            </div>
+            <div>
+                <h3>Lighting Settings:</h3>
+                <h3 style="display: inline-block;">DMX File:</h3><label for="file-upload" class="custom-file-upload">Custom Upload</label><input id="file-upload" type="file"/>
+                <h3 style="display: inline-block;">Unified BPM:</h3><input type="number" style="display: inline-block;">
+                <h3 style="display: inline-block;">Lighting Colour:</h3><input type="color" id="lightColor" style="display: inline-block;">
+            </div>
+        </div>
+        <div class="customizeRow">
+            <div>
+                <h3>Custom Skybox:</h3>
+                <img class="customImg" id="SkySelect" src="models/skybox/white_bk.png"><h3>Select Skybox</h3>
+                <select id="skyboxtex">
+                    <option value="white" disabled selected>None</option>
+                    <option value="river-c">Clear Day</option>
+                    <option value="sp">Night Sky</option>
+                    <option value="corona">Purple Nebula</option>
+                    <option value="uw">Underwater Scenery</option>
+                    <option value="snowalps">Snowy Mountain Range</option>
+                </select>
+                <button  class="customBtn" onclick="createSky(scene)">Apply</button><button  class="customBtn">Discard</button>
+            </div>
+            <div>
+                <h3>Extra Effects:</h3>
+                <div class="emoteContainer">
+                    <div><h2>🌫️</h2><h4>Smoke</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>🎆</h2><h4>Firework</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>🔥</h2><h4>Fire</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>🎛️</h2><h4>Bass tremble</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>🎵</h2><h4>Music visuals</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>⚡</h2><h4>Lasers</h4><p>Active:</p><input type="checkbox"></div>
+                    <div><h2>✨</h2><h4>Glowsticks</h4><p>Active:</p><input type="checkbox"></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="closeBtn" onclick="CustomOff()">Apply</button>
+            <button class="closeBtn" onclick="CustomOff()">Discard</button>
+        </div>
+    </div>
+            <div class="stageName"><h2 id="stageName">3D Visual Representation of the Scene</h2></div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/three@0.139.2/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.139.2/examples/js/controls/OrbitControls.js"></script>
+<script src="https://unpkg.com/three@0.139.2/examples/js/loaders/GLTFLoader.js"></script>
+<script src="js/createEvent.js"></script>
+<script src="js/script.js"></script>
+<script src="js/buttonscript.js"></script>
+<link rel="stylesheet" href="css/stylesheet.css">
+
+</html>
