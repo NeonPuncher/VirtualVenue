@@ -188,12 +188,6 @@ function MakeButtons() {
         document.getElementById("sceneName").innerHTML = model.name;
         document.getElementById("thumbnailsrc").style.display = "none";
         document.getElementById("thumbnailsrc").innerHTML = model.thumbsrc;
-        //Check if login is Programmer or Production
-        if(document.getElementById('SName') != null){
-            document.getElementById('SName').value = model.name;
-            document.getElementById('SVersion').value = "V0.1_Prototype_1"
-        }
-
     }
 });
 }
@@ -206,7 +200,6 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(containerWidth, containerHeight);
 container.appendChild(renderer.domElement);
 
-//Enable camera rotation
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.autoRotate = true;
 controls.enableDamping = true;
@@ -216,7 +209,6 @@ camera.position.z = 5;
 function animate() {
     requestAnimationFrame(animate);
 
-    //Spin model very slowly
     if (activeModel) {
         activeModel.rotation.y += 0.00001;
     }

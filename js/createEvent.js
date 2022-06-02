@@ -17,6 +17,8 @@ document.getElementById('maxUsers').value = newEvent.MUsers;
 document.getElementById('sceneName').textContent = newEvent.SName;
 document.getElementById('extraInfo').value = newEvent.EInfo;
 document.getElementById('thumbnailsrc').textContent = newEvent.thumbnailsrc;
+document.getElementById('skyboxtex').value = newEvent.SkyBox;
+document.getElementById('BannerImg').value = newEvent.BannerImg;
 
 //By creating a new Event all items visible in the overview menu get added to the object and that object gets added to the array
 //Array gets pushed to the localStorage and the user will get redirected to the Calendar page
@@ -51,12 +53,15 @@ function createNewEvent() {
         SName: document.getElementById('sceneName').textContent,
         EInfo: document.getElementById('extraInfo').value,
         ImgSrc: document.getElementById('thumbnailsrc').textContent,
+        SkyBox: document.getElementById('skyboxtex').value,
+        BannerImg: document.getElementById('BannerImg').value,
         Status: Status,
         backgroundColor: StatusColor,
       };
       eventList.push(newEvent);
       localStorage.setItem("eventlist", JSON.stringify(eventList));
       location.href = "http://127.0.0.1:5500/Calendar.html";
+
     } else {
       alert('Invalid date.');
     }

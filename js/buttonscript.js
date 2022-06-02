@@ -60,5 +60,5 @@
   }
 
   function ReqeustStage() {
-    alert('open mailbox');
+    window.location.href = "mailto:makerspace@dutchrosemedia.com?subject=Subject&body=I%20would%20like%20to%20request%20a%20stage.";
   }

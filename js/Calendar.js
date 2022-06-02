@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
           SName: info.event._def.extendedProps.SName,
           EInfo: info.event._def.extendedProps.EInfo,
           ImgSrc: info.event._def.extendedProps.ImgSrc,
+          SkyBox: info.event._def.extendedProps.SkyBox,
+          BannerImg: info.event._def.extendedProps.BannerImg,
           Status: info.event._def.extendedProps.Status,
           backgroundColor: info.event.eventBackgroundColor,
         };
@@ -114,6 +116,8 @@ function getDate() {
         SName: '',
         EInfo: '',
         ImgSrc: '',
+        SkyBox: '',
+        BannerImg: '',
         Status: 'In Progress',
         backgroundColor: '#edc40e',
       };
