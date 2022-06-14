@@ -8,7 +8,8 @@ const models = [
         thumbsrc: "./images/EffenaarThumb.jpg",
         path: "./models/Effenaar.glb",
         tags: ["Indoor","Hall","Big","Crowded"],
-        scale: 0.3
+        scale: 0.3,
+        StageStat: "feedback"
     },
     {
         name: "Cyber City",
@@ -16,7 +17,8 @@ const models = [
         thumbsrc: "./images/CyberCityThumb.jpg",
         path: "./models/CyberCity.glb",
         tags: ["Cyber","City","EDM","Lights"],
-        scale: 0.3
+        scale: 0.3,
+        StageStat: "complete"
     },
     {
         name: "Dream Beach Club",
@@ -24,7 +26,8 @@ const models = [
         thumbsrc: "./images/BeachThumb.jpg",
         path: "./models/Beach.glb",
         tags: ["Beach","Summer","Dream"],
-        scale: 0.3
+        scale: 0.3,
+        StageStat: "complete"
     },
     {
         name: "Concert Hal",
@@ -32,7 +35,8 @@ const models = [
         thumbsrc: "./images/ConcerthalThumb.jpg",
         path: "./models/Concerthal.glb",
         tags: ["Indoor","Hall","Small","Crowded"],
-        scale: 0.4
+        scale: 0.4,
+        StageStat: "setup"
     },
     {
         name: "Small Town Cafe",
@@ -40,7 +44,8 @@ const models = [
         thumbsrc: "./images/CafeThumb.jpg",
         path: "./models/Cafe.glb",
         tags: ["Small","Cafe","Country","Carneval"],
-        scale: 0.3
+        scale: 0.3,
+        StageStat: "feedback"
     },
     {
         name: "Melenia",
@@ -48,7 +53,8 @@ const models = [
         thumbsrc: "./images/MeleniaThumb.jpg",
         path: "./models/Melenia.glb",
         tags: ["Elden Ring","Boss","Monster","Miquella"],
-        scale: 2
+        scale: 2,
+        StageStat: "complete"
     },
     {
         name: "Monster",
@@ -56,9 +62,12 @@ const models = [
         thumbsrc: "./images/MonsterThumb.jpg",
         path: "./models//Monster.glb",
         tags: ["Scary","Monster","Big","Spooky"],
-        scale: 2
+        scale: 2,
+        StageStat: "complete"
     },
 ];
+console.log(models);
+
 //Model Filter
 let modelFilter = [];
 function filter() {
@@ -154,6 +163,9 @@ function MakeButtons() {
         //Setting Attributes
         button.setAttribute('model-id', i);
         button.className = "stagecontainer";
+        if(modelFilter[i].StageStat == 'feedback'){
+            button.style.backgroundColor = '#edc40e';
+        }
         button.classList.add('model-load-button');
         textdiv.className = "textDiv";
         title.innerHTML = modelFilter[i].name;
@@ -184,10 +196,9 @@ function MakeButtons() {
         });
         createSky(scene)
         AddLights(scene);
-        document.getElementById('stageName').innerHTML = model.name;
-        document.getElementById("sceneName").innerHTML = model.name;
-        document.getElementById("thumbnailsrc").style.display = "none";
-        document.getElementById("thumbnailsrc").innerHTML = model.thumbsrc;
+        document.getElementById('stageStatus').value = model.StageStat;
+        document.getElementById('SName').value = model.name;
+        document.getElementById('SVersion').value = "V0.1_Prototype_1";
     }
 });
 }

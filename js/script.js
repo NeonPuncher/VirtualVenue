@@ -188,12 +188,6 @@ function MakeButtons() {
         document.getElementById("sceneName").innerHTML = model.name;
         document.getElementById("thumbnailsrc").style.display = "none";
         document.getElementById("thumbnailsrc").innerHTML = model.thumbsrc;
-        //Check if login is Programmer or Production
-        if(document.getElementById('SName') != null){
-            document.getElementById('SName').value = model.name;
-            document.getElementById('SVersion').value = "V0.1_Prototype_1"
-        }
-
     }
 });
 }

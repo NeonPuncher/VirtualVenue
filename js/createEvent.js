@@ -36,6 +36,7 @@ function createNewEvent() {
       StatusColor = '#0e6fed'
     }    
 
+    //New Event Properties --> Send to Virtual Venue
     if (!isNaN(startDate.valueOf())) { // valid?
       newEvent = {
         planner: newEvent.planner,

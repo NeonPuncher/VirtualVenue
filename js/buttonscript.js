@@ -28,6 +28,7 @@
   function OverviewOff() {
     document.getElementById("overview").style.width = "0vw";
     document.getElementById("overview-content").style.display = "none";
+    document.getElementById("feedback").value = ""
   }
 
   function ShowStages() {
