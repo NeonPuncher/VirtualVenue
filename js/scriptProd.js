@@ -91,7 +91,6 @@ function createPathString(filename) {
     const pathString = sides.map(side => {
         return baseFilename + "_" + side + fileType;
     });
-
     return pathString
 }
 //Map Skybox texture

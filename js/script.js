@@ -82,7 +82,6 @@ function createPathString(filename) {
     const pathString = sides.map(side => {
         return baseFilename + "_" + side + fileType;
     });
-
     return pathString
 }
 //Map Skybox texture
@@ -200,7 +199,6 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(containerWidth, containerHeight);
 container.appendChild(renderer.domElement);
 
-//Enable camera rotation
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.autoRotate = true;
 controls.enableDamping = true;
@@ -210,7 +208,6 @@ camera.position.z = 5;
 function animate() {
     requestAnimationFrame(animate);
 
-    //Spin model very slowly
     if (activeModel) {
         activeModel.rotation.y += 0.00001;
     }

@@ -149,7 +149,6 @@ select {
 
 .Sidefill {
     flex-grow: 1;
-    height: 30vh;
 }
 
 .CalendarInfo {
