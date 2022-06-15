@@ -1,3 +1,7 @@
+  let UserName = JSON.parse(sessionStorage.getItem("Username") || ("[]"));
+  console.log(UserName)
+
+  let MakerSpaceMail = "makerspace@dutchrosemedia.com"
   let header = document.getElementById('listHeader');
   let headerBts = header.getElementsByClassName('headerBtn');
   for (let i = 0; i < headerBts.length; i++) {
@@ -28,6 +32,12 @@
   function OverviewOff() {
     document.getElementById("overview").style.width = "0vw";
     document.getElementById("overview-content").style.display = "none";
+
+  }
+
+  function giveFeedback() {
+    let feedbacktext = document.getElementById("feedback").value;
+    window.location.href = "mailto:"+MakerSpaceMail+"?subject=Subject&body="+feedbacktext;
     document.getElementById("feedback").value = ""
   }
 
@@ -45,11 +55,14 @@
   }
 
   function Calendar() {
-    location.href = "http://127.0.0.1:5500/Calendar.html";
-  }
+    if(UserName == 'programmeur')
+    {
+      location.href = "http://127.0.0.1:5500/Calendar.html";
+    }
+    if(UserName == 'productieleider'){
+      location.href = "http://127.0.0.1:5500/CalendarProductie.html";
+    }
 
-  function CalendarPro() {
-    location.href = "http://127.0.0.1:5500/CalendarProductie.html";
   }
 
   function TestStage() {
@@ -61,5 +74,5 @@
   }
 
   function ReqeustStage() {
-    window.location.href = "mailto:makerspace@dutchrosemedia.com?subject=Subject&body=I%20would%20like%20to%20request%20a%20stage.";
+    window.location.href = "mailto:"+MakerSpaceMail+"?subject=Subject&body=I%20would%20like%20to%20request%20a%20stage.";
   }

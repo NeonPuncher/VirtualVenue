@@ -2,9 +2,7 @@
 let eventList = JSON.parse(localStorage.getItem("eventlist") || ("[]"));
 let newEvent = [];
 
-//Get username
-let UserName = JSON.parse(sessionStorage.getItem("Username") || ("[]"));
-console.log(UserName);
+console.log(eventList)
 
 //Instantiate the Calendar
 //Specific Calendar options are loaded
@@ -63,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
           BannerImg: info.event._def.extendedProps.BannerImg,
           Status: info.event._def.extendedProps.Status,
           backgroundColor: info.event.eventBackgroundColor,
+          effects: info.event._def.extendedProps.effects
         };
       },
       customButtons: {
@@ -120,6 +119,7 @@ function getDate() {
         BannerImg: '',
         Status: 'In Progress',
         backgroundColor: '#edc40e',
+        effects: [],
       };
       sessionStorage.setItem("newEvent", JSON.stringify(newEvent));
       location.href = "http://127.0.0.1:5500/create.html";

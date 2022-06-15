@@ -2,10 +2,6 @@
 let eventList = JSON.parse(localStorage.getItem("eventlist") || ("[]"));
 let newEvent = [];
 
-//Get username
-let UserName = JSON.parse(sessionStorage.getItem("Username") || ("[]"));
-console.log(UserName);
-
 //Instantiate the Calendar
 //Specific Calendar options are loaded
 //Custom Calendar Header with custom buttons

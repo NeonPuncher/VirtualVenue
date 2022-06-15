@@ -234,13 +234,13 @@ input[type="file"] {
     cursor: pointer;
 }
 
-.emoteContainer {
+.effectContainer {
     background-color: white;
     height: 14vh;
     overflow-y: scroll;
 }
 
-.emoteContainer > div {
+.effect {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

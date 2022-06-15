@@ -20,6 +20,24 @@ document.getElementById('thumbnailsrc').textContent = newEvent.thumbnailsrc;
 document.getElementById('skyboxtex').value = newEvent.SkyBox;
 document.getElementById('BannerImg').value = newEvent.BannerImg;
 
+//Get Checked Effects
+let effectContainer = document.getElementById('effectContainer');
+let checkBoxes = effectContainer.querySelectorAll('input[type="checkbox"]');
+let Effects = [];
+function getEffects() {
+  Effects = [];
+  checkBoxes.forEach(effect => {
+    if(effect.checked) {
+      let data = {
+        effect: effect.value,
+        selected: effect.checked
+      }
+      Effects.push(data);
+    }
+  })
+  console.log(Effects)
+}
+
 //By creating a new Event all items visible in the overview menu get added to the object and that object gets added to the array
 //Array gets pushed to the localStorage and the user will get redirected to the Calendar page
 function createNewEvent() {
@@ -58,6 +76,7 @@ function createNewEvent() {
         BannerImg: document.getElementById('BannerImg').value,
         Status: Status,
         backgroundColor: StatusColor,
+        effects: Effects,
       };
       eventList.push(newEvent);
       localStorage.setItem("eventlist", JSON.stringify(eventList));

@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>Virtual Stage Manager</title>
     <meta charset="UTF-8">
@@ -129,19 +128,30 @@
             </div>
             <div>
                 <h3>Extra Effects:</h3>
-                <div class="emoteContainer">
-                    <div><h2>🌫️</h2><h4>Smoke</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>🎆</h2><h4>Firework</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>🔥</h2><h4>Fire</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>🎛️</h2><h4>Bass tremble</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>🎵</h2><h4>Music visuals</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>⚡</h2><h4>Lasers</h4><p>Active:</p><input type="checkbox"></div>
-                    <div><h2>✨</h2><h4>Glowsticks</h4><p>Active:</p><input type="checkbox"></div>
+                <div class="effectContainer" id="effectContainer">
+                    <div class="effect">
+                        <h2>🌫️</h2><label for="smoke">Smoke</label><p>Active:</p><input id="smoke" type="checkbox" value="Smoke">
+                    </div>
+                    <div class="effect">
+                        <h2>🔥</h2><label for="fire">Fire</label><p>Active:</p><input id="fire" type="checkbox" value="Fire">
+                    </div>
+                    <div class="effect">
+                        <h2>🎛️</h2><label for="bass">Bass Tremble</label><p>Active:</p><input id="bass" type="checkbox" value="Bass">
+                    </div>
+                    <div class="effect">
+                        <h2>🎵</h2><label for="music">Music Visuals</label><p>Active:</p><input id="music" type="checkbox" value="Music">
+                    </div>
+                    <div class="effect">
+                        <h2>⚡</h2><label for="lasers">Lasers</label><p>Active:</p><input id="lasers" type="checkbox" value="Lasers">
+                    </div>
+                    <div class="effect">
+                        <h2>✨</h2><label for="glow">Glowsticks</label><p>Active:</p><input id="glow" type="checkbox" value="Glow">
+                    </div>
                 </div>
             </div>
         </div>
         <div>
-            <button class="closeBtn" onclick="CustomOff()">Apply</button>
+            <button class="closeBtn" onclick="CustomOff(), getEffects()">Apply</button>
             <button class="closeBtn" onclick="CustomOff()">Discard</button>
         </div>
     </div>
