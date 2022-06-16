@@ -1,5 +1,4 @@
 const loader = new THREE.GLTFLoader();
-
 //Get models from Array (LATER REPLACE WITH JSON)
 const models = [
     {
@@ -9,6 +8,7 @@ const models = [
         path: "./models/Effenaar.glb",
         tags: ["Indoor","Hall","Big","Crowded"],
         scale: 0.3,
+        Stat: "Need Feedback",
         StageStat: "feedback"
     },
     {
@@ -18,6 +18,7 @@ const models = [
         path: "./models/CyberCity.glb",
         tags: ["Cyber","City","EDM","Lights"],
         scale: 0.3,
+        Stat: "Completed",
         StageStat: "complete"
     },
     {
@@ -27,6 +28,7 @@ const models = [
         path: "./models/Beach.glb",
         tags: ["Beach","Summer","Dream"],
         scale: 0.3,
+        Stat: "Completed",
         StageStat: "complete"
     },
     {
@@ -36,6 +38,7 @@ const models = [
         path: "./models/Concerthal.glb",
         tags: ["Indoor","Hall","Small","Crowded"],
         scale: 0.4,
+        Stat: "Setup Stage, requires feedback",
         StageStat: "setup"
     },
     {
@@ -45,6 +48,7 @@ const models = [
         path: "./models/Cafe.glb",
         tags: ["Small","Cafe","Country","Carneval"],
         scale: 0.3,
+        Stat: "Need Feedback",
         StageStat: "feedback"
     },
     {
@@ -54,6 +58,7 @@ const models = [
         path: "./models/Melenia.glb",
         tags: ["Elden Ring","Boss","Monster","Miquella"],
         scale: 2,
+        Stat: "Completed",
         StageStat: "complete"
     },
     {
@@ -63,6 +68,7 @@ const models = [
         path: "./models//Monster.glb",
         tags: ["Scary","Monster","Big","Spooky"],
         scale: 2,
+        Stat: "Completed",
         StageStat: "complete"
     },
 ];
@@ -145,6 +151,7 @@ let activeModel = null;
 
 //ModelSwitcher Button Generator with Title, description and images
 //MAAK HIER NOG EEN FOR LOOP BIJ OM DOOR DE TAGS TE LOPEN!!
+let buttonId;
 function MakeButtons() {
     const modelButtonContainer = document.getElementById('modelButtonContainer');
     const prevButtons = document.getElementsByClassName('stagecontainer');
@@ -157,12 +164,13 @@ function MakeButtons() {
         const thumbnail = document.createElement('button');
         const title = document.createElement('h3');
         const description = document.createElement('p');
-        const tags = document.createElement('p');
+        const tags = document.createElement('h3');
         const textdiv = document.createElement('div');
         //Setting Attributes
         button.setAttribute('model-id', i);
+        button.id = "model-id"+i;
         button.className = "stagecontainer";
-        if(modelFilter[i].StageStat == 'feedback'){
+        if(modelFilter[i].StageStat == 'feedback' || modelFilter[i].StageStat == 'setup' ){
             button.style.backgroundColor = '#edc40e';
         }
         button.classList.add('model-load-button');
@@ -170,7 +178,8 @@ function MakeButtons() {
         title.innerHTML = modelFilter[i].name;
         thumbnail.innerHTML="<img class='stageimage' src="+ modelFilter[i].thumbsrc + ">";
         description.innerHTML = modelFilter[i].description;
-        tags.innerHTML ="/"+modelFilter[i].tags+"/";
+        tags.innerHTML = modelFilter[i].Stat;
+        tags.id = "tags-id"+i;
         //Appending to Parents
         modelButtonContainer.appendChild(button);
         button.appendChild(thumbnail);
@@ -195,6 +204,10 @@ function MakeButtons() {
         });
         createSky(scene)
         AddLights(scene);
+        buttonId = button.getAttribute('model-id');
+        console.log(buttonId);
+        
+        document.getElementById('stageName').innerHTML = model.name;
         document.getElementById('stageStatus').value = model.StageStat;
         document.getElementById('SName').value = model.name;
         document.getElementById('SVersion').value = "V0.1_Prototype_1";
@@ -229,3 +242,9 @@ function animate() {
 };
 animate();
 
+function giveFeedback() {
+    let feedbacktext = document.getElementById("feedback").value;
+    window.location.href = "mailto:"+MakerSpaceMail+"?subject=Subject&body="+feedbacktext;
+    document.getElementById('model-id'+buttonId).style.backgroundColor = '#70ADFF';
+    document.getElementById('tags-id'+buttonId).innerHTML = 'Feedback provided';
+}

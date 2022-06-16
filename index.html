@@ -31,14 +31,15 @@
 </body>
 <script>
     function checkLog() {
+        //LOGINFUNCTIE REPLACE WITH DATABASE OF USERNAMES
         let email = document.getElementById('email').value;
         console.log(email)
-        if(email == 'programmeur@effenaar.com'){
+        if(email == 'programmeur@effenaar.nl'){
             location.href = "http://127.0.0.1:5500/Calendar.html";
             let Username = email.substring(0, email.indexOf('@'))
             sessionStorage.setItem("Username", JSON.stringify(Username));
         }
-        if(email == 'productieleider@effenaar.com'){
+        if(email == 'productieleider@effenaar.nl'){
             location.href = "http://127.0.0.1:5500/CalendarProductie.html";
             let Username = email.substring(0, email.indexOf('@'))
             sessionStorage.setItem("Username", JSON.stringify(Username));

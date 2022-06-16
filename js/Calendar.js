@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
       scrollTime: '18:00:00',
       height: window.innerHeight,
       selectable: true,
+      timeFormat: 'H:mm',
       selectOverlap: false,
       unselectAuto: false,
       nowIndicator: true,
@@ -163,7 +164,13 @@ function changeStatus() {
   }
   localStorage.setItem("eventlist", JSON.stringify(eventList));
   console.log(eventList[index])
-  location.href = "http://127.0.0.1:5500/Calendar.html";
+  if(UserName == 'programmeur')
+  {
+    location.href = "http://127.0.0.1:5500/Calendar.html";
+  }
+  if(UserName == 'productieleider'){
+    location.href = "http://127.0.0.1:5500/CalendarProductie.html";
+  }
 }
 
 

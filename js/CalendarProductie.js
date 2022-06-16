@@ -10,20 +10,21 @@ let SelectedEventName = '';
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'timeGridWeek',
-      scrollTime: '18:00:00',
-      height: window.innerHeight,
-      selectable: true,
-      selectOverlap: false,
-      unselectAuto: false,
-      nowIndicator: true,
-      events: [],
-      aspectRatio: 1,
-      headerToolbar: {
-        left: 'dayGridMonth,timeGridWeek prev,next',
-        center: 'title',
-        right: ''
-      },
+    initialView: 'timeGridWeek',
+    scrollTime: '18:00:00',
+    height: window.innerHeight,
+    selectable: true,
+    timeFormat: 'h:mm',
+    selectOverlap: false,
+    unselectAuto: false,
+    nowIndicator: true,
+    events: [],
+    aspectRatio: 1,
+    headerToolbar: {
+      left: 'dayGridMonth,timeGridWeek,timeGridDay prev,next',
+      center: 'title',
+      right: ''
+    },
       eventClick: function(info) {
         document.getElementById("eventName").innerHTML = info.event.title;
         document.getElementById("planner").innerHTML = info.event._def.extendedProps.planner;
@@ -34,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("extraInfo").innerHTML = info.event._def.extendedProps.EInfo;
         document.getElementById("infoImg").src = info.event._def.extendedProps.ImgSrc;
         document.getElementById("Status").value = info.event._def.extendedProps.Status;
-        document.getElementById("EditBtn").style.display = "block";
-        
         SelectedEventName = info.event.title;
         console.log(SelectedEventName);
+
+        
 
         newEvent = {
           title: info.event.title,
@@ -155,7 +156,13 @@ function changeStatus() {
   }
   localStorage.setItem("eventlist", JSON.stringify(eventList));
   console.log(eventList[index])
-  location.href = "http://127.0.0.1:5500/Calendar.html";
+  if(UserName == 'programmeur')
+  {
+    location.href = "http://127.0.0.1:5500/Calendar.html";
+  }
+  if(UserName == 'productieleider'){
+    location.href = "http://127.0.0.1:5500/CalendarProductie.html";
+  };
 }
 
 

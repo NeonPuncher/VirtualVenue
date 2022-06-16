@@ -32,13 +32,6 @@
   function OverviewOff() {
     document.getElementById("overview").style.width = "0vw";
     document.getElementById("overview-content").style.display = "none";
-
-  }
-
-  function giveFeedback() {
-    let feedbacktext = document.getElementById("feedback").value;
-    window.location.href = "mailto:"+MakerSpaceMail+"?subject=Subject&body="+feedbacktext;
-    document.getElementById("feedback").value = ""
   }
 
   function ShowStages() {
