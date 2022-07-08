@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollTime: '18:00:00',
     height: window.innerHeight,
     selectable: true,
-    timeFormat: 'h:mm',
+    firstDay: 1,
     selectOverlap: false,
     unselectAuto: false,
     nowIndicator: true,

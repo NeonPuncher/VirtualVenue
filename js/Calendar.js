@@ -16,14 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
       scrollTime: '18:00:00',
       height: window.innerHeight,
       selectable: true,
-      timeFormat: 'H:mm',
+      titleFormat: { // will produce something like "Tuesday, September 18, 2018"
+        month: 'short',
+        year: 'numeric',
+        day: 'numeric',
+      },
+      firstDay: 1,
       selectOverlap: false,
       unselectAuto: false,
       nowIndicator: true,
       events: [],
       aspectRatio: 1,
       headerToolbar: {
-        left: 'dayGridMonth,timeGridWeek prev,next',
+        left: 'dayGridMonth,timeGridWeek,timeGridDay prev,next',
         center: 'title',
         right: 'addEventButton'
       },

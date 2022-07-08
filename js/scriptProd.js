@@ -8,8 +8,8 @@ const models = [
         path: "./models/Effenaar.glb",
         tags: ["Indoor","Hall","Big","Crowded"],
         scale: 0.3,
-        Stat: "Need Feedback",
-        StageStat: "feedback"
+        Stat: "Completed",
+        StageStat: "complete"
     },
     {
         name: "Cyber City",
@@ -18,8 +18,8 @@ const models = [
         path: "./models/CyberCity.glb",
         tags: ["Cyber","City","EDM","Lights"],
         scale: 0.3,
-        Stat: "Completed",
-        StageStat: "complete"
+        Stat: "Need Feedback",
+        StageStat: "feedback"
     },
     {
         name: "Dream Beach Club",

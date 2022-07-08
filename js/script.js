@@ -13,10 +13,10 @@ const models = [
     {
         name: "Cyber City",
         description: "A Cyber City fit for EDM music, the color of the building lights is reactive to the beat of the music.",
-        thumbsrc: "./images/CyberCityThumb.jpg",
-        path: "./models/CyberCity.glb",
+        thumbsrc: "./images/CyberCity2Thumb.jpg",
+        path: "./models/CyberCity2.glb",
         tags: ["Cyber","City","EDM","Lights"],
-        scale: 0.3
+        scale: 0.15
     },
     {
         name: "Dream Beach Club",
